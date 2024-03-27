@@ -1,0 +1,209 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+
+/* Keyframes for animating the logo */
+@keyframes logoGrow {
+    from {
+        width: 25px;
+        opacity: 0;
+    }
+    to {
+        width: 475px;
+        opacity: 1;
+    }
+}
+
+#logo {
+    animation: logoGrow 5s forwards;
+}
+
+
+body {
+    font-family: 'Poppins', serif;
+    background-image: url('images/concrete_seamless.png');
+    background-color: #f1f1f1;
+}
+
+/* Flex styling for the header */
+header {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Flex styling for the navigation links */
+.nav_links {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+    color: rgb(0, 0, 208);
+}
+
+.nav_links a:visited {
+    color: inherit;
+}
+
+.card > header {
+    background: #288088;
+    border: 2px solid #45ADAD;
+    padding: 20px 0;
+    border-top-left-radius: 50px;
+    border-top-right-radius: 50px;
+}
+
+/* Flex styling for the card class */
+.card {
+    display: flex;
+    flex-basis: 450px;
+    flex-direction: column;
+    flex-grow: 1;
+    border-top-left-radius:100px ;
+    border-top-right-radius: 100px;
+}
+
+/* Flex styling for the pricing section */
+.pricing {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: stretch;
+}
+
+/* Styling for the images in the gallery */
+.gallery img {
+    border: 10px solid #50C7C7;
+    margin: 10px;
+    width: 300px;
+}
+
+/* Flex styling for the gallery class */
+.gallery {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+@media (min-width: 900px) {
+   
+    main {
+        padding-top: 50px; 
+    }
+    
+    body {
+        padding-top: 70px;
+    }
+    
+    body > header:first-of-type{
+        position: fixed;
+        z-index: 1000;
+
+    }
+
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        top: 0;
+        width: 100%;
+        
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        list-style-type: none;
+        align-items: center;
+    }
+
+    .pricing {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 275px;
+        flex-grow: 0;
+    }
+
+    .card{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 275px;
+        flex-grow: 0;
+        }
+
+
+    .gallery {
+        display: flex;
+        flex-grow: 0;
+        justify-content: center;
+    }
+}
+
+
+@media (prefers-reduced-motion: reduce) {
+    #logo {
+        animation: none;
+    }
+}
+
+@media print {
+    
+
+    main {
+        padding-top: 0px; 
+    }
+    
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background-image: none;
+    }
+
+    .nav_links {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 0;
+    }
+
+    .nav_links li {
+        margin: 0 100px;
+
+    }
+
+    .pricing {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        flex-basis: 275px;
+        flex-grow: 0;
+    }
+
+
+    .card {
+        border: 2px solid #45ADDD;
+        border-top-left-radius:50px ;
+        border-top-right-radius:50px ;
+        flex-basis: 325px;
+        
+    }
+
+    #gallery, .gallery {
+        display: none;
+    }
+
+    .card ul {
+        list-style-type: none;
+    }
+
+    .card ul li:nth-child(2)::after {
+        content: '\1F44D'; 
+    }
+}
